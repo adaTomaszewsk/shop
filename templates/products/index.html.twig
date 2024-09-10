@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Nasze produkty</h1>
+
+    <div class="products">
+        {% for product in products %}
+            <div class="product-item">
+                <img src="{{ product.image }}" alt="{{ product.name }}">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Cena: {{ product.price }} zł</p>
+            </div>
+        {% else %}
+            <p>Brak produktów do wyświetlenia.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
